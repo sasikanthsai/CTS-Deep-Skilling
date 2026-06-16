@@ -1,21 +1,32 @@
-SELECT
-    ProductID,
-    ProductName,
-    Category,
-    Price,
-    ROW_NUMBER() OVER (
-        PARTITION BY Category
-        ORDER BY Price DESC
-    ) AS RowNum,
+WITH ProductRanks AS
+(
+    SELECT
+        ProductID,
+        ProductName,
+        Category,
+        Price,
 
-    RANK() OVER (
-        PARTITION BY Category
-        ORDER BY Price DESC
-    ) AS RankNum,
+        ROW_NUMBER() OVER
+        (
+            PARTITION BY Category
+            ORDER BY Price DESC
+        ) AS RowNum,
 
-    DENSE_RANK() OVER (
-        PARTITION BY Category
-        ORDER BY Price DESC
-    ) AS DenseRankNum
+        RANK() OVER
+        (
+            PARTITION BY Category
+            ORDER BY Price DESC
+        ) AS RankNum,
 
-FROM Products;
+        DENSE_RANK() OVER
+        (
+            PARTITION BY Category
+            ORDER BY Price DESC
+        ) AS DenseRankNum
+
+    FROM Products
+)
+
+SELECT *
+FROM ProductRanks
+WHERE RowNum <= 3;
