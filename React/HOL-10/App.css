@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height:100vh;
+    padding:40px;
+}
+
+.App{
+    width:95%;
+    max-width:1300px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:45px;
+    margin-bottom:35px;
+    letter-spacing:1px;
+    text-shadow:2px 2px 10px rgba(0,0,0,.4);
+}
+
+.officeImage{
+    width:100%;
+    max-width:700px;
+    height:350px;
+    display:block;
+    margin:auto;
+    border-radius:20px;
+    object-fit:cover;
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+    transition:.4s;
+}
+
+.officeImage:hover{
+    transform:scale(1.03);
+}
+
+.officeContainer{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+    transition:.4s;
+    border-left:8px solid #1976d2;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 40px rgba(0,0,0,.35);
+}
+
+.card h2{
+    color:#0d47a1;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.card h3{
+    margin:15px 0;
+    font-size:22px;
+}
+
+.red{
+    color:#e53935;
+    font-weight:bold;
+}
+
+.green{
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+.address{
+    color:#555;
+}
+
+.viewBtn{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:10px;
+    background:#1976d2;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.viewBtn:hover{
+    background:#0d47a1;
+    transform:scale(1.05);
+}
+
+.footer{
+    text-align:center;
+    color:white;
+    font-size:22px;
+    margin-top:50px;
+    padding:20px;
+    font-weight:bold;
+}
